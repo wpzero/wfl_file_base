@@ -18,5 +18,5 @@ module WflFileBase
 end
 
 require "wfl_file_base/file"
-require "wfl_file_base/file_base"
+require "wfl_file_base/base"
 require "wfl_file_base/record"
