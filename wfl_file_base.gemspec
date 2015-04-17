@@ -7,9 +7,9 @@ Gem::Specification.new do |spec|
   spec.name          = "wfl_file_base"
   spec.version       = WflFileBase::VERSION
   spec.authors       = ["wpzero"]
-  spec.email         = ["wangping@galiumsof.com"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.email         = ["wpcreep@gmail.com"]
+  spec.summary       = %q{map file to a range of ORMs, store them on different backends}
+  spec.description   = %q{map file to a range of ORMs, store them on different backends. it can bind a record to a folder}
   spec.homepage      = ""
   spec.license       = "MIT"
 
@@ -18,6 +18,7 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
+  spec.add_dependency "activerecord" 
   spec.add_development_dependency "bundler", "~> 1.6"
   spec.add_development_dependency "rake"
 end
