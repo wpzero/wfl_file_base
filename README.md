@@ -39,25 +39,47 @@ create WflFileBase::Base subclass and override the filename ,  dir_name the meth
 such as:
 
 ```
-class SymbleFileBase < WflFileBase::Base
+require 'digest/md5'
+require 'carrierwave/processing/mime_types'
+require_relative '../services/file_system/file_path_setting'
+require_relative '../services/file_system/base/md5_process'
+
+class NormalFileBase < WflFileBase::Base
+
+  pre_process :save_content_type_and_size_in_model
+
   def store_dir
-    FileSys::FilePathSetting.sym_path + model.parent_path
+    FileSys::FilePathSetting.resource_path + '/' + md5init
   end
 
   def filename
-    if self.store
-      self.uuid
-    else
-      model.read_attribute(:file)
-    end
+      @name ||= md5
   end
 
   def filename_was
       model.send(:"#{column}_was")
   end
 
-  def uuid
-    @uuid ||= SecureRandom.uuid
+  def md5
+  	# creat process
+  	if self.store
+      puts '---------new'
+      file.rewind
+  		@md5 ||= FileSys::Md5Process.send(:get_md5_name, :content => file.read.to_s, :size => file.size.to_s)
+  	# read process
+  	else
+      puts '---------old'
+  		model.read_attribute(column)
+  	end
+  end
+
+  def md5init
+  	md5[0].upcase
+  end
+
+  def save_content_type_and_size_in_model
+    model.content_type = file.mime_type if file.mime_type
+    model.file_size = file.size
   end
 end
 ```
