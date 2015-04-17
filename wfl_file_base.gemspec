@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["wpcreep@gmail.com"]
   spec.summary       = %q{map file to a range of ORMs, store them on different backends}
   spec.description   = %q{map file to a range of ORMs, store them on different backends. it can bind a record to a folder}
-  spec.homepage      = ""
+  spec.homepage      = "https://github.com/wpzero/wfl_file_base"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
