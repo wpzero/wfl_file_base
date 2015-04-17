@@ -85,6 +85,10 @@ end
 ```
 
 
+store method is used to check whether in store process.
+pre_process macro can pass symbol variable to identify the method which will be called before the save process.
+process macro can pass symbol variable to identify the method which will be called after the save process.
+
 
 use wfl_mount_file_base activereord macro to bind column and WflFileBase::Base subclass.
 
@@ -130,16 +134,22 @@ module FileSys
 end
 ```
 
+
+
 now we can use FileSys::FileResource simplely.
+
+
 
 ```
 f = FileSys::FileResource.new
 f.file = File.open('tmp.txt')
 f.save
-f.file  # => <SymbleFileBase>
-f.file.file # => <File>
-f.file.read # => 'String'
+f.file   =># <SymbleFileBase>
+f.file.file =># <File>
+f.file.read =># <String>
 ```
+
+
 
 
 
