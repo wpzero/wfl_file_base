@@ -1,6 +1,9 @@
 # WflFileBase
 
-TODO: Write a gem description
+this gem is used to map a file to a record based on the activerecord.
+this gem is very simple and small. but I think it can fit most the requests of u.
+this gem is similar to carrierwave. I must admit 'yes'
+before I write this gem, I use the carrierwave in my project, my project has the function network disk. but the carrierwave can not bind the folder to a record(so not fit my request and the carrier is too fat).so I write a gem.
 
 ## Installation
 
@@ -18,7 +21,7 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+
 
 ## Contributing
 

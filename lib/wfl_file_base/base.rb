@@ -27,7 +27,7 @@ module WflFileBase
 		end
 
 		def path
-			"#{Wfl.config.root}#{self.url}"
+			"#{WflFileBase.config.root}#{self.url}"
 		end
 
 		def url
@@ -35,7 +35,7 @@ module WflFileBase
 		end
 
 		def abs_store_dir
-			"#{Wfl.config.root}#{self.store_dir}"
+			"#{WflFileBase.config.root}#{self.store_dir}"
 		end
 
 
@@ -122,7 +122,7 @@ module WflFileBase
 		end
 
 		def path_was
-			"#{Wfl.config.root}#{self.store_dir}/#{self.filename_was}"
+			"#{WflFileBase.config.root}#{self.store_dir}/#{self.filename_was}"
 		end
 
 		def remove_file
@@ -154,7 +154,7 @@ module WflFileBase
 		end
 
 		def tmp_file_dir
-			"#{Wfl.config.root}#{Wfl.config.tmp_dir}"
+			"#{WflFileBase.config.root}#{WflFileBase.config.tmp_dir}"
 		end
 
 	end
