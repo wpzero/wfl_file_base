@@ -138,7 +138,7 @@ module WflFileBase
 				FileUtils.mkdir_p(tmp_file_dir) unless File.exists?(tmp_file_dir)
 				File.delete(tmp_file_path) if File.exists?(tmp_file_path)
 				file.rewind
-				File.open(tmp_file_path, 'w') do |f|
+				File.open(tmp_file_path, 'wb') do |f|
 					f.write(file.read)
 				end
 				File.open(tmp_file_path)
